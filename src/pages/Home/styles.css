@@ -21,7 +21,21 @@
 
 
 .text-container {
+    width: 94vw;
+    margin: auto;
     background-color: #005d93 ;
-    height: 50vh;
-    width: 96vw;
+    color: #ffffff;
+    text-align: center;
+    padding: 2%;
+    border-radius: 2vh;
+    margin-bottom: 8vh;
+}
+
+
+
+.line-separator {
+    margin: auto;
+    background-color: #005d93 ;
+    width: 46vw;
+    height: 1px;
 }

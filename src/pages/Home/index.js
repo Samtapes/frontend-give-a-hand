@@ -2,11 +2,13 @@ import React from 'react';
 
 import './styles.css';
 
+import { Link } from 'react-router-dom';
+
 import SunIcon from '../../assets/Sun'
 
 export default function Home() {
     return(
-        <div>
+        <div className="position-relative">
             <header>
                 <div className="image-container d-flex align-items-center justify-content-center">
                     <h1 className="text-white" style={{fontSize: '8vh'}}>Give-a-hand</h1>
@@ -27,10 +29,23 @@ export default function Home() {
                 </div>
             </header>
 
-            
-            <div className="text-container">
-                <p>Opa marcão</p>
-            </div>
+            <main className="mt-5 position-relative">
+                <div className="text-container">
+                    <p style={{fontSize: '2.2vh'}}>Bem-vindo ao Give-a-hand</p>
+                    <p className="mb-5" style={{fontSize: '2.2vh'}}>Um site do governo municipal para ajudar a cidade e com grande foco na acessibilidades à aqueles com alguma deficiência!</p>
+                    <Link className="text-white" style={{fontSize: '2.2vh'}}><b>Ler mais</b></Link>
+                </div>
+
+                <div className="line-separator mt-5 mb-5"/>
+
+                <h2 className="text-center mb-5">Tem alguma ideia para melhor a cidade?</h2>
+
+                <div className="text-container">
+                    <p style={{fontSize: '2.2vh'}}>Bem-vindo ao Give-a-hand</p>
+                    <p className="mb-5" style={{fontSize: '2.2vh'}}>Um site do governo municipal para ajudar a cidade e com grande foco na acessibilidades à aqueles com alguma deficiência!</p>
+                    <Link className="text-white" style={{fontSize: '2.2vh'}}><b>Ler mais</b></Link>
+                </div>
+            </main>
         </div>
     );
 }
