@@ -5,7 +5,7 @@ import './styles.css'
 
 export default function Login(){
     return(
-        <div className="mx-30p">
+        <div className="mx-30p text-center">
             <h1 className="text-blue my-5 text-center">Login</h1>
 
             <div className="form-group ">

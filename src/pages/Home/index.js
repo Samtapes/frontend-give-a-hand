@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 import SunIcon from '../../assets/Sun'
 
+import HandIcon from '../../assets/mao'
+
 export default function Home() {
     return(
         <div className="position-relative">
@@ -36,14 +38,16 @@ export default function Home() {
                     <Link className="text-white" style={{fontSize: '2.2vh'}}><b>Ler mais</b></Link>
                 </div>
 
+
                 <div className="line-separator mt-5 mb-5"/>
+
 
                 <h2 className="text-center mb-5">Tem alguma ideia para melhor a cidade?</h2>
 
-                <div className="text-container">
-                    <p style={{fontSize: '2.2vh'}}>Bem-vindo ao Give-a-hand</p>
-                    <p className="mb-5" style={{fontSize: '2.2vh'}}>Um site do governo municipal para ajudar a cidade e com grande foco na acessibilidades à aqueles com alguma deficiência!</p>
-                    <Link className="text-white" style={{fontSize: '2.2vh'}}><b>Ler mais</b></Link>
+
+                <div className="card">
+                    <HandIcon width="40%" height="40%"/>
+                    <p className="card-text" style={{fontSize: '2.2vh'}}><b>Clique aqui para fazer um pedido</b></p>
                 </div>
             </main>
         </div>
