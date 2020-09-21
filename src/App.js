@@ -5,7 +5,7 @@ import Routes from './routes';
 function App() {
 
   return (
-    <div className="text-center">
+    <div>
       <Routes/>
     </div>
   );

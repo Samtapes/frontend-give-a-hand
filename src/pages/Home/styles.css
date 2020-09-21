@@ -1,0 +1,27 @@
+.image-container {
+    background-image: url("https://cdn-istoe-ssl.akamaized.net/wp-content/uploads/sites/14/2019/08/parque-eua.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 55vh;
+}
+
+
+.temp-card {
+    padding: 2vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    margin: 2vw;
+    background-color: #005d937a;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 5%;
+}
+
+
+.text-container {
+    background-color: #005d93 ;
+    height: 50vh;
+    width: 96vw;
+}

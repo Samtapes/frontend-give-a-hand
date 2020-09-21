@@ -1,0 +1,23 @@
+.text-blue {
+    color: #005E93;
+}
+
+.btn-blue {
+    background-color: #005E93;
+    color: white;
+}
+
+.cadastro-link {
+    color: #000000;
+    text-decoration: none;
+}
+
+.cadastro-link:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+.mx-30p {
+    margin-left: 30%;
+    margin-right: 30%;
+}

@@ -1,0 +1,20 @@
+import React from 'react';
+import { Link} from 'react-router-dom'
+
+import './styles.css'
+
+export default function Login(){
+    return(
+        <div className="mx-30p">
+            <h1 className="text-blue my-5 text-center">Login</h1>
+
+            <div className="form-group ">
+                <input type="name" className="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Nome"/>
+                <input type="password" className="form-control my-4" id="inputSenha" placeholder="Senha"/>
+                <button type="submit" className="btn btn-blue py-2 px-5">Login</button>
+            </div>
+            <Link to="#" className="cadastro-link">Não possui uma conta?</Link>
+
+        </div>
+    );
+}
