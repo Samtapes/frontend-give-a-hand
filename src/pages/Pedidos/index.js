@@ -23,32 +23,77 @@ export default function Pedidos() {
                     <Link to="#" className="btn btn-blue px-4 py-3 ml-3">Seus Pedidos</Link>
                 </div>
 
-                <div class="">
+                <div class="d-flex justify-content-center">
 
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+                        <div class="col-xl-4 col-md-6 mb-5">
                             
                             <div class="card pedido-card" style={{width: '30rem'}}>
                                 <img src="https://live.staticflickr.com/3393/3182574799_162a2fd13c_b.jpg" class="card-img-top" alt="..."/>
                                 <div class="card-body">
-                                    <h5 class="card-title">Tirem essa escada na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
+                                    <h5 class="card-title">Tirem essa elevação na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
                                     <p class="card-text">Por Carla Almeida</p>
+
                                     <div>
-                                        {/* <Link to="#" class="lerMais-link"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
-                                        <Link to="#" class="lerMais-link"><FaRegArrowAltCircleDown size="35" color="#000"/></Link> */}
-                                        <Link to="#" class="lerMais-link">Ler mais</Link>
+                                        <h5 class="">
+                                            <Link to="#" class="lerMais-link pr-3"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
+                                            2.745
+                                            <Link to="#" class="lerMais-link pl-4"><FaRegArrowAltCircleDown size="35" color="#000"/></Link>
+                                            <Link to="#" class="lerMais-link float-right pr-4">Ler mais</Link>
+                                        </h5>
                                     </div>
+
                                 </div>
                             </div>
  
                         </div>
                         
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+                        <div class="col-xl-4 col-md-6 mb-5">
 
+                            {/* COMECO */}
+                            <div class="card pedido-card" style={{width: '30rem'}}>
+                                <img src="https://live.staticflickr.com/3393/3182574799_162a2fd13c_b.jpg" class="card-img-top" alt="..."/>
+                                <div class="card-body">
+                                    <h5 class="card-title">Tirem essa elevação na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
+                                    <p class="card-text">Por Carla Almeida</p>
+
+                                    <div>
+                                        <h5 class="">
+                                            <Link to="#" class="lerMais-link pr-3"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
+                                            2.745
+                                            <Link to="#" class="lerMais-link pl-4"><FaRegArrowAltCircleDown size="35" color="#000"/></Link>
+                                            <Link to="#" class="lerMais-link float-right pr-4">Ler mais</Link>
+                                        </h5>
+                                    </div>
+
+                                </div>
+                            </div>
+                            {/* FIM */}
+                            
                         </div>
 
-                        <div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+                        <div class="col-xl-4 col-md-6 mb-5">
                             
+                             {/* COMECO */}
+                             <div class="card pedido-card" style={{width: '30rem'}}>
+                                <img src="https://live.staticflickr.com/3393/3182574799_162a2fd13c_b.jpg" class="card-img-top" alt="..."/>
+                                <div class="card-body">
+                                    <h5 class="card-title">Tirem essa elevação na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
+                                    <p class="card-text">Por Carla Almeida</p>
+
+                                    <div>
+                                        <h5 class="">
+                                            <Link to="#" class="lerMais-link pr-3"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
+                                            2.745
+                                            <Link to="#" class="lerMais-link pl-4"><FaRegArrowAltCircleDown size="35" color="#000"/></Link>
+                                            <Link to="#" class="lerMais-link float-right pr-4">Ler mais</Link>
+                                        </h5>
+                                    </div>
+
+                                </div>
+                            </div>
+                            {/* FIM */}
+
                         </div>
                         
                     </div>
