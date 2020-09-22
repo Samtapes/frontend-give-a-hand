@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function NovoPedido(){
     return(
-        <div className="mx-30p">
+        <div className="mx-30p text-center">
             <h1 className="text-blue my-5 text-center">Novo Pedido</h1>
 
             <div className="form-group ">

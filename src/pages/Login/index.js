@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link} from 'react-router-dom'
 
-import './styles.css'
+// import './styles.css'
 
 export default function Login(){
     return(
-        <div className="mx-30p text-center">
+        <div className="mx-30p text-center mt-5">
             <h1 className="text-blue my-5 text-center">Login</h1>
 
             <div className="form-group ">
@@ -13,7 +13,7 @@ export default function Login(){
                 <input type="password" className="form-control my-4" id="inputSenha" placeholder="Senha"/>
                 <button type="submit" className="btn btn-blue py-2 px-5">Login</button>
             </div>
-            <Link to="#" className="cadastro-link">Não possui uma conta?</Link>
+            <Link to="/cadastro" className="cadastro-link">Não possui uma conta?</Link>
 
         </div>
     );

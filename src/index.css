@@ -1,14 +1,44 @@
 body {
   margin: 0;
+  margin-top: 100px;
 }
+
+
+
+.text-blue {
+  color: #005E93;
+}
+
+.btn-blue {
+  background-color: #005E93;
+  color: white;
+}
+
+.cadastro-link {
+  color: #000000;
+  text-decoration: none;
+}
+
+.cadastro-link:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+
 
 .menu-color {
   background-color: #005E93;
+  position: fixed;
+  top: 0px;
+  margin-bottom: 100px;
+  z-index: 2;
+  width: 100% ;
+  transition: 1s;
 }
 
 .mx-30p {
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .img-logo {

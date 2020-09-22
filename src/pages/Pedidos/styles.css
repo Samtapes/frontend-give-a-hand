@@ -1,0 +1,21 @@
+.image-container-pedidos {
+    background-image: url("https://i.ibb.co/wS6dwz0/steven-hwg-z-Bsd-RTHIIm4-unsplash-1.jpg");
+    background-position: 0px -125px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 55vh;
+}   
+
+.pedido-card {
+    background-color: #EEEEEE;
+}
+
+.lerMais-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.lerMais-link:hover {
+    color: #000;
+}

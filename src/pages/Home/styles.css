@@ -2,6 +2,7 @@
     background-image: url("https://cdn-istoe-ssl.akamaized.net/wp-content/uploads/sites/14/2019/08/parque-eua.jpg");
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 55vh;
 }
@@ -42,7 +43,7 @@
 
 
 
-.card {
+.card-personalized {
     align-items: center;
     width: 30%;
     margin: auto;
@@ -54,13 +55,13 @@
     margin-bottom: 8vh;
 }
 
-.card-text{
+.card-personalized-text{
     margin-top: 10%;
 }
 
 
 @media only screen and (max-width: 880px) {
-    .card {
+    .card-personalized {
         align-items: center;
         width: 50%;
         margin: auto;
@@ -72,3 +73,25 @@
         margin-bottom: 8vh;
     }
   }
+
+
+
+
+
+.card-personalized-img {
+    margin-top: 5%;
+    height: 40%;
+    object-fit: cover;
+}
+
+
+.news-card{
+    background-color: #005d93;
+}
+
+
+.container-news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function NovaNoticia(){
     return(
-        <div className="mx-30p">
+        <div className="mx-30p my-5 text-center">
             <h1 className="text-blue my-5 text-center">Nova Notícia</h1>
 
             <div className="form-group ">
