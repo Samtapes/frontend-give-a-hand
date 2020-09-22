@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import '../index.css'
 
-import logo from '../assets/LOGO.png'
+import logo from '../assets/LOGO.svg'
 
 export default function Menu(){
     window.onscroll = function (e) {
