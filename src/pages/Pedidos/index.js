@@ -34,7 +34,8 @@ export default function Pedidos() {
                                     <h5 class="card-title">Tirem essa escada na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
                                     <p class="card-text">Por Carla Almeida</p>
                                     <div>
-                                        <Link to="#" class="lerMais-link"><FaRegArrowAltCircleUp size="64" color="#ffffff"/></Link>
+                                        <Link to="#" class="lerMais-link"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
+                                        <Link to="#" class="lerMais-link"><FaRegArrowAltCircleDown size="35" color="#000"/></Link>
                                         <Link to="#" class="lerMais-link">Ler mais</Link>
                                     </div>
                                 </div>
