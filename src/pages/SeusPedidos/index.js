@@ -4,7 +4,7 @@ import './styles.css';
 
 import { Link } from 'react-router-dom';
 
-import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown } from 'react-icons/fa';
+import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown, FaTrash  } from 'react-icons/fa';
 
 export default function Pedidos() {
 
@@ -12,20 +12,23 @@ export default function Pedidos() {
         <div className="position-relative" style={{marginTop: -45}}>
             <header>
                 <div className="image-container-pedidos d-flex align-items-center justify-content-center">
-                    <h1 className="text-white" style={{fontSize: '8vh', textShadow: '1px 3px 10px #000000'}}>Pedidos</h1>
+                    <h1 className="text-white" style={{fontSize: '8vh', textShadow: '1px 3px 10px #000000'}}>Seus Pedidos</h1>
                 </div>
             </header>
 
             <main className="my-5 position-relative mt-5">
 
+                <div class="d-flex justify-content-center mb-5">
+                    <h2 class="">Você tem 1 Pedido</h2>
+                </div>
+
                 <div className="text-center mb-5">
                     <Link to="/add-pedido" className="btn btn-blue px-4 py-3">Criar Pedido</Link>
-                    <Link to="/seus-pedidos" className="btn btn-blue px-4 py-3 ml-3">Seus Pedidos</Link>
                 </div>
 
                 <div className="d-flex justify-content-around flex-wrap">
 
-                    <div className="card pedido-card" style={{width: '400px'}}>
+                    <div className="card pedido-card mb-5" style={{width: '400px'}}>
                         <img src="https://live.staticflickr.com/3393/3182574799_162a2fd13c_b.jpg" className="card-img-top" alt="..."/>
                         <div className="card-body">
                             <h5 className="card-title">Tirem essa elevação na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
@@ -33,11 +36,15 @@ export default function Pedidos() {
 
                             <div>
                                 <h5 className="">
-                                    <Link to="#" className="lerMais-link pr-3"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
+                                    <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
-                                    <Link to="#" className="lerMais-link pl-4"><FaRegArrowAltCircleDown size="35" color="#000"/></Link>
+                                    <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
                                     <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
+
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn-pedido"><FaTrash size="35" color="#000"/></button>
+                                </div>
                             </div>
 
                         </div>
@@ -46,7 +53,7 @@ export default function Pedidos() {
                 
 
                     {/* COMECO */}
-                    <div className="card pedido-card" style={{width: '400px'}}>
+                    <div className="card pedido-card mb-5" style={{width: '400px'}}>
                         <img src="https://live.staticflickr.com/3393/3182574799_162a2fd13c_b.jpg" className="card-img-top" alt="..."/>
                         <div className="card-body">
                             <h5 className="card-title">Tirem essa elevação na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
@@ -54,11 +61,15 @@ export default function Pedidos() {
 
                             <div>
                                 <h5 className="">
-                                    <Link to="#" className="lerMais-link pr-3"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
+                                    <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
-                                    <Link to="#" className="lerMais-link pl-4"><FaRegArrowAltCircleDown size="35" color="#000"/></Link>
+                                    <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
                                     <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
+
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn-pedido"><FaTrash size="35" color="#000"/></button>
+                                </div>
                             </div>
 
                         </div>
@@ -68,19 +79,23 @@ export default function Pedidos() {
                     
 
                     {/* COMECO */}
-                    <div className="card pedido-card" style={{width: '400px'}}>
+                    <div className="card pedido-card mb-5" style={{width: '400px'}}>
                         <img src="https://live.staticflickr.com/3393/3182574799_162a2fd13c_b.jpg" className="card-img-top" alt="..."/>
                         <div className="card-body">
                             <h5 className="card-title">Tirem essa elevação na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
                             <p className="card-text">Por Carla Almeida</p>
 
                             <div>
-                                <h5 className="">
-                                    <Link to="#" className="lerMais-link pr-3"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
+                                <h5 className="mb-3">
+                                    <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
-                                    <Link to="#" className="lerMais-link pl-4"><FaRegArrowAltCircleDown size="35" color="#000"/></Link>
+                                    <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
                                     <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
+
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn-pedido"><FaTrash size="35" color="#000"/></button>
+                                </div>
                             </div>
 
                         </div>

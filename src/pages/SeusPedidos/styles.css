@@ -1,0 +1,9 @@
+.btn-pedido {
+    background-color: #EEEEEE; /* Green */
+    border: none;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }

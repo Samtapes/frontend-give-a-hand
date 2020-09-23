@@ -14,7 +14,7 @@ export default function Admin(){
             <div className="container">
                 <div className="row">
                     <div className="col-md-4 my-2">
-                        <Link to="#Login">
+                        <Link to="/editar-pedidos">
                             <button type="submit" className="btn btn-blue p-4 px-5" style={{width: '60%'}}> <FaRegComment size="64" color="#ffffff"/> <br/> Editar pedidos</button>
                         </Link>
                     </div>
@@ -24,7 +24,7 @@ export default function Admin(){
                         </Link>
                     </div>
                     <div className="col-md-4 my-2">
-                        <Link to="#Login">
+                        <Link to="/editar-noticia">
                             <button type="submit" className="btn btn-blue p-4 px-5" style={{width: '60%'}}> <FaRegNewspaper size="64" color="#ffffff"/>  <br/> Editar notícias</button>
                         </Link>
                     </div>
