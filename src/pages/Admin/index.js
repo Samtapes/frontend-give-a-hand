@@ -1,9 +1,14 @@
 import React from 'react';
 
 import { FaRegNewspaper, FaRegComment, FaRegPlusSquare } from 'react-icons/fa';
-// Esse /fa é de Font Awesome
+
 
 import { Link } from 'react-router-dom'
+
+
+import Footer from '../Footer';
+
+// Sempre tem q começar com maiuscula, pq é um componente
 
 
 export default function Admin(){
@@ -31,6 +36,7 @@ export default function Admin(){
                 </div>
             </div>
 
+            <Footer style={{position: 'absolute'}}/>
         </div>
     );
 }

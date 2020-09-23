@@ -4,7 +4,9 @@ import './styles.css';
 
 import { Link } from 'react-router-dom';
 
-import { FaArrowLeft } from 'react-icons/fa';
+
+
+import Footer from '../Footer';
 
 
 
@@ -43,9 +45,7 @@ export default function Home() {
                 </div>
             </header>
 
-            <main className="mt-5 position-relative">
-                <Link to="/"><FaArrowLeft className="ml-5 mb-5" size="35" color="#000"/></Link>
-            
+            <main className="mt-5 position-relative">           
 
                 <p className="mx-5" style={{fontSize: '2vh'}}>
                     <Materia/>
@@ -92,6 +92,8 @@ export default function Home() {
                 </div>
 
             </main>
+      
+            <Footer/>
         </div>
     );
 }

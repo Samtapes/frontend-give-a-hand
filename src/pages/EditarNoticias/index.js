@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 import { FaTrash } from 'react-icons/fa';
 
+
+import Footer from '../Footer';
+
+
 export default function Home() {
 
     return(
@@ -20,7 +24,7 @@ export default function Home() {
             <main className="mt-5 position-relative">
 
                 <div className="text-center my-5">
-                    <Link to="/add-pedido" className="btn btn-blue px-4 py-3">Criar Notícia</Link>
+                    <Link to="/add-noticiax" className="btn btn-blue px-4 py-3">Criar Notícia</Link>
                 </div>
 
                 <div className="container-news text-center mb-5">
@@ -59,6 +63,8 @@ export default function Home() {
                 </div>
 
             </main>
+            
+            <Footer/>
         </div>
     );
 }

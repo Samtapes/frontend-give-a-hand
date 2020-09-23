@@ -3,6 +3,11 @@ import React from 'react';
 import './styles.css';
 
 
+
+import Footer from '../Footer';
+
+
+
 export default function Sobre() {
 
     return(
@@ -30,27 +35,29 @@ export default function Sobre() {
 
                 <h2 className="text-center mb-5">Principais Cargos do Governo</h2>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 mb-5">
-                            <img class="img-fluid" src="https://i.ibb.co/bWCdvx1/image2.png" alt=""/>
-                            <h2 class="text-center mt-2">Prefeito Martin Lutério</h2>
-                            <p class="text-center mt-2 text-cargo">“Nosso foco é fazer uma cidade realmente acessivel”</p>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-4 mb-5">
+                            <img className="img-fluid" src="https://i.ibb.co/bWCdvx1/image2.png" alt=""/>
+                            <h2 className="text-center mt-2">Prefeito Martin Lutério</h2>
+                            <p className="text-center mt-2 text-cargo">“Nosso foco é fazer uma cidade realmente acessivel”</p>
                         </div>
-                        <div class="col-lg-4 mb-5">
-                            <img class="img-fluid" src="https://i.ibb.co/1z5Wm60/image3.png" alt=""/>
-                            <h2 class="text-center mt-2">Vice-prefeito Josef Keredyto</h2>
-                            <p class="text-center mt-2 text-cargo">“Nosso foco é fazer uma cidade realmente acessivel”</p>
+                        <div className="col-lg-4 mb-5">
+                            <img className="img-fluid" src="https://i.ibb.co/1z5Wm60/image3.png" alt=""/>
+                            <h2 className="text-center mt-2">Vice-prefeito Josef Keredyto</h2>
+                            <p className="text-center mt-2 text-cargo">“Nosso foco é fazer uma cidade realmente acessivel”</p>
                         </div>
-                        <div class="col-lg-4 mb-5">
-                            <img class="img-fluid" src="https://i.ibb.co/pvFGdtd/image3-1.png" alt=""/>
-                            <h2 class="text-center mt-2">Vereadora Briana Van</h2>
-                            <p class="text-center mt-2 text-cargo">“Nosso foco é fazer uma cidade realmente acessivel”</p>
+                        <div className="col-lg-4 mb-5">
+                            <img className="img-fluid" src="https://i.ibb.co/pvFGdtd/image3-1.png" alt=""/>
+                            <h2 className="text-center mt-2">Vereadora Briana Van</h2>
+                            <p className="text-center mt-2 text-cargo">“Nosso foco é fazer uma cidade realmente acessivel”</p>
                         </div>
                     </div>
                 </div>
 
             </main>
+        
+            <Footer/>
         </div>
     );
 }

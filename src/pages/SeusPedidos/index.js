@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom';
 
 import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown, FaTrash  } from 'react-icons/fa';
 
+
+
+import Footer from '../Footer';
+
+
 export default function Pedidos() {
 
     return(
@@ -106,6 +111,8 @@ export default function Pedidos() {
                 </div>
 
             </main>
+        
+            <Footer/>
         </div>
     );
 }

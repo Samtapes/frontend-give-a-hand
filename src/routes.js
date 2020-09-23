@@ -12,6 +12,7 @@ import NovoPedido from './pages/NovoPedido';
 import Admin from './pages/Admin';
 import Sobre from './pages/Sobre';
 import Pedidos from './pages/Pedidos';
+import Pedido from './pages/Pedido';
 import Noticia from './pages/Noticia';
 import EditarPedidos from './pages/EditarPedidos';
 import SeusPedidos from './pages/SeusPedidos';
@@ -32,6 +33,7 @@ export default function Routes() {
                     <Route path="/editar-pedidos" exact component={EditarPedidos} />
                     <Route path="/sobre" exact component={Sobre} />
                     <Route path="/pedidos" exact component={Pedidos} />
+                    <Route path="/pedido" exact component={Pedido} />
                     <Route path="/add-pedido" exact component={NovoPedido} />
                     <Route path="/seus-pedidos" exact component={SeusPedidos} />
                     <Route path="/noticia" exact component={Noticia} />

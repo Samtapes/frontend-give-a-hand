@@ -1,21 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-// import './styles.css'
+
+import Footer from '../Footer';
+
 
 export default function Cadastro(){
     return(
-        <div className="mx-30p mt-5 text-center">
-            <h1 className="text-blue my-5 text-center">Cadastro</h1>
+        <div> 
+            <div className="mx-30p mt-5 text-center">
+                <h1 className="text-blue my-5 text-center">Cadastro</h1>
 
-            <div className="form-group ">
-                <input type="name" className="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Nome"/>
-                <input type="email" className="form-control my-4" id="inputEmail" aria-describedby="emailHelp" placeholder="Email"/>
-                <input type="password" className="form-control mb-4" id="inputSenha" placeholder="Senha"/>
-                <button type="submit" className="btn btn-blue py-2 px-5">Cadastrar</button>
+                <div className="form-group ">
+                    <input type="name" className="form-control" id="inputNome" aria-describedby="nameHelp" placeholder="Nome"/>
+                    <input type="email" className="form-control my-4" id="inputEmail" aria-describedby="emailHelp" placeholder="Email"/>
+                    <input type="password" className="form-control mb-4" id="inputSenha" placeholder="Senha"/>
+                    <button type="submit" className="btn btn-blue py-2 px-5">Cadastrar</button>
+                </div>
+                <Link to="/login" className="cadastro-link">Já tem uma conta?</Link>
+
             </div>
-            <Link to="/login" className="cadastro-link">Já tem uma conta?</Link>
 
+            <Footer style={{position: 'absolute'}}/>
         </div>
     );
 }

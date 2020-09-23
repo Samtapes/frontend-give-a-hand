@@ -84,3 +84,15 @@ body {
 .logo-link {
   width:8%;
 }
+
+.footer {
+  /* position: absolute; */
+  bottom: 0; 
+  width: 100%;
+  /* height: 1%; */
+  background-color: #005E93;
+}
+
+.text-footer {
+  color: #fff;
+}

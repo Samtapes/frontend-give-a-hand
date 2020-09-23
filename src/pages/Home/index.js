@@ -9,6 +9,8 @@ import SunIcon from '../../assets/Sun'
 import HandIcon from '../../assets/mao'
 
 
+import Footer from '../Footer';
+
 
 export default function Home() {
 
@@ -94,6 +96,8 @@ export default function Home() {
                 </div>
 
             </main>
+
+            <Footer/>
         </div>
     );
 }

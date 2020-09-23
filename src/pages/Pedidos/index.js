@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom';
 
 import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown } from 'react-icons/fa';
 
+import Footer from '../Footer';
+
+
+
+
 export default function Pedidos() {
 
     return(
@@ -33,10 +38,10 @@ export default function Pedidos() {
 
                             <div>
                                 <h5 className="">
-                                    <Link to="#" className="lerMais-link pr-3"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
+                                    <button to="#" className="lerMais-link pr-3 border-0"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
-                                    <Link to="#" className="lerMais-link pl-4"><FaRegArrowAltCircleDown size="35" color="#000"/></Link>
-                                    <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
+                                    <button to="#" className="lerMais-link pl-4 border-0"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
+                                    <Link to="/pedido" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
                             </div>
 
@@ -54,10 +59,10 @@ export default function Pedidos() {
 
                             <div>
                                 <h5 className="">
-                                    <Link to="#" className="lerMais-link pr-3"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
+                                    <button to="#" className="lerMais-link pr-3 border-0"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
-                                    <Link to="#" className="lerMais-link pl-4"><FaRegArrowAltCircleDown size="35" color="#000"/></Link>
-                                    <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
+                                    <button to="#" className="lerMais-link pl-4 border-0"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
+                                    <Link to="/pedido" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
                             </div>
 
@@ -76,10 +81,10 @@ export default function Pedidos() {
 
                             <div>
                                 <h5 className="">
-                                    <Link to="#" className="lerMais-link pr-3"><FaRegArrowAltCircleUp size="35" color="#000"/></Link>
+                                    <button to="#" className="lerMais-link pr-3 border-0"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
-                                    <Link to="#" className="lerMais-link pl-4"><FaRegArrowAltCircleDown size="35" color="#000"/></Link>
-                                    <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
+                                    <button to="#" className="lerMais-link pl-4 border-0"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
+                                    <Link to="/pedido" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
                             </div>
 
@@ -91,6 +96,8 @@ export default function Pedidos() {
                 </div>
 
             </main>
+        
+            <Footer style={{marginTop: '5%'}}/>
         </div>
     );
 }
