@@ -40,7 +40,7 @@ export default function Pedidos() {
                                     <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
                                     <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
-                                    <Link to="#" className="lerMais-link float-right pr-4">Editar</Link>
+                                    <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
 
                                 <div class="d-flex justify-content-center">
@@ -66,7 +66,7 @@ export default function Pedidos() {
                                     <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
                                     <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
-                                    <Link to="#" className="lerMais-link float-right pr-4">Editar</Link>
+                                    <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
 
                                 <div class="d-flex justify-content-center">
@@ -93,7 +93,7 @@ export default function Pedidos() {
                                     <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
                                     <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
-                                    <Link to="#" className="lerMais-link float-right pr-4">Editar</Link>
+                                    <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
 
                                 <div class="d-flex justify-content-center">
