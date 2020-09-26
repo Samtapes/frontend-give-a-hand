@@ -33,7 +33,7 @@ export default function Routes() {
                     <Route path="/editar-pedidos" exact component={EditarPedidos} />
                     <Route path="/sobre" exact component={Sobre} />
                     <Route path="/pedidos" exact component={Pedidos} />
-                    <Route path="/pedido" exact component={Pedido} />
+                    <Route path="/pedido/:requestId" exact component={Pedido} />
                     <Route path="/add-pedido" exact component={NovoPedido} />
                     <Route path="/seus-pedidos" exact component={SeusPedidos} />
                     <Route path="/noticia" exact component={Noticia} />

@@ -1,46 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 import Footer from '../Footer';
 
-import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown } from 'react-icons/fa';
+import api from '../../services/api';
+
+
+import './styles.css'
 
 
 
-export default function Pedido(){
-    const imagem = "https://live.staticflickr.com/3393/3182574799_162a2fd13c_b.jpg";
-    const nome = "Carla Almeida";
-    const local = "Rua Almeida Magnolia 29";
-    const descricao = "Já faz mais de 4 anos que todos os dias no caminho para o ponto de ônibus eu tenho dificuldade de  passar por essa parte da calçada onde tem uma escada no caminho, moro sozinha e não tenho ninguem para me ajudar a passar, todas as vezes sou obrigada a desviar pela rua. Por favor me ajudem!!";
+export default function Pedido(props){
+    const requestId = props.match.params.requestId
 
-    const avaliacao = 2.745
+    const [request, setRequest] = useState({});
 
+    useEffect(() => {
+        async function getRequest(){
+            const request = await api.get('pedido/' + requestId);
+            console.log(request.data);
 
+            setRequest(request.data);
+        }
+
+        getRequest();
+    }, [requestId])
 
     return(
         <div>
             <main>
 
                 <div className="container">
-                    <img src={imagem} className="text-center w-100 mb-3 img-fluid" alt="..."/>
-
-                    <div className="mb-3">
-                        <h5>
-                            <button to="#" className="lerMais-link pr-3 border-0 bg-transparent"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
-                            {avaliacao}
-                            <button to="#" className="lerMais-link pl-4 border-0 bg-transparent"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
-                        </h5>
-                    </div>
+                    <img src={request.photo !== null ? request.photo : 'https://i.ibb.co/3hDxD6F/da-a-mao-otario.png'} className="text-center w-100 mb-3 img-fluid request-img" alt="..."/>
 
                     <div className="m-auto w-100">
-                        <p style={{fontSize: '2vh'}}><b>Por: {nome}</b></p>
+                        <p style={{fontSize: '2vh'}}><b>Por: {request.name}</b></p>
 
-                        <p style={{fontSize: '2vh'}}>Local do Problema: {local}</p>
+                        <p style={{fontSize: '2vh', display: request.adress !== null ? 'block' : 'none'}}>Local do Problema: {request.adress}</p>
 
-                        <p style={{fontSize: '2vh'}}>{descricao}</p>
+                        <p style={{fontSize: '2vh'}}>{request.description}</p>
                         
                         <div className="justify-content-center align-center text-center my-5">
-                            <button className="btn btn-blue px-4 py-3">Criar Pedido</button>
+                            <button className="btn btn-blue px-4 py-3">Compartilhar</button>
                         </div>
                     </div>
                 </div>

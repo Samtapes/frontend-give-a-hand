@@ -48,22 +48,22 @@ export default function Pedidos() {
                 <div className="d-flex justify-content-around flex-wrap">
 
                     {/* Começo Card */}
-                        {pedidos.map(pedido => (
-                            <div className="card pedido-card mb-5" style={{width: '400px'}} key={pedido.id}>
-                            
-                            <img src={pedido.photo !== null ? pedido.photo : 'https://i.ibb.co/3hDxD6F/da-a-mao-otario.png'} className="card-img-top h-50 card-personalized-imgA" alt="..."/>
-                            <div className="card-body">
-                                <h5 className="card-title">{pedido.request}</h5>
-                                <p className="card-text">{pedido.name}</p>
-    
-                                <div>
-                                    <h5>
-                                        <Link to="/pedido" className="lerMais-link float-right pr-4">Ler mais</Link>
-                                    </h5>
-                                </div>
+                    {pedidos.map(pedido => (
+                        <div className="card pedido-card mb-5" style={{width: '400px'}} key={pedido.id}>
+                        
+                        <img src={pedido.photo !== null ? pedido.photo : 'https://i.ibb.co/3hDxD6F/da-a-mao-otario.png'} className="card-img-top h-50 card-personalized-imgA" alt="..."/>
+                        <div className="card-body">
+                            <h5 className="card-title">{pedido.request}</h5>
+                            <p className="card-text">{pedido.name}</p>
+
+                            <div>
+                                <h5>
+                                    <Link to={{ pathname: '/pedido/' + pedido.id}} className="lerMais-link float-right pr-4">Ler mais</Link>
+                                </h5>
                             </div>
-                            </div>
-                        ))}
+                        </div>
+                        </div>
+                    ))}
 
                 </div>
 
