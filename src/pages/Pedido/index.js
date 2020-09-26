@@ -26,6 +26,19 @@ export default function Pedido(props){
         getRequest();
     }, [requestId])
 
+
+
+    function createMarkup(description) {
+        return {__html: description};
+    }      
+
+
+    function RequestDescription(props) {
+        return(
+            <div style={{fontSize: '2vh', whiteSpace: 'pre-wrap'}} dangerouslySetInnerHTML={createMarkup(props.description)}></div>
+        );
+    }
+
     return(
         <div>
             <main>
@@ -38,7 +51,7 @@ export default function Pedido(props){
 
                         <p style={{fontSize: '2vh', display: request.adress !== null ? 'block' : 'none'}}>Local do Problema: {request.adress}</p>
 
-                        <p style={{fontSize: '2vh'}}>{request.description}</p>
+                        <RequestDescription description={request.description}/>
                         
                         <div className="justify-content-center align-center text-center my-5">
                             <button className="btn btn-blue px-4 py-3">Compartilhar</button>

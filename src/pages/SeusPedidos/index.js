@@ -5,6 +5,9 @@ import './styles.css';
 import { Link } from 'react-router-dom';
 
 
+import { FaRegTrashAlt } from 'react-icons/fa';
+
+
 
 
 import api from '../../services/api';
@@ -18,6 +21,9 @@ export default function Pedidos() {
 
     const user_id = localStorage.getItem('user_id');
 
+    const [qntdPedidos, setQntdPedidos] = useState(0);
+
+
     useEffect(() => {
         api.get('profile', {
             headers: {
@@ -25,8 +31,27 @@ export default function Pedidos() {
             }
         }).then(res => {
             setPedidos(res.data);
+            
+            setQntdPedidos(res.data.length)
         })
     }, [user_id]);
+
+
+    async function handleDelete(id){
+        try{
+            await api.delete('pedidos/' + id, {
+                headers: {
+                    Authorization: user_id,
+                }
+            })
+
+            setPedidos(pedidos.filter(pedido => pedido.id !== id));
+        } 
+        
+        catch(err){
+            alert("Erro... Tente novamente!");
+        }
+    }
 
 
     return(
@@ -40,7 +65,7 @@ export default function Pedidos() {
             <main className="my-5 position-relative mt-5">
 
                 <div className="d-flex justify-content-center mb-5">
-                    <h2>Você tem 1 Pedido</h2>
+                    <h2>Você tem {qntdPedidos} Pedido</h2>
                 </div>
 
                 <div className="text-center mb-5">
@@ -52,6 +77,7 @@ export default function Pedidos() {
                     {pedidos.map(pedido => (
                         <div className="card pedido-card mb-5" style={{width: '400px'}} key={pedido.id}>
                         
+                        <FaRegTrashAlt size="36" color="red" style={{position: 'absolute', cursor: 'pointer', right: '0'}} onClick={() => handleDelete(pedido.id)}/>
                         <img src={pedido.photo !== null ? pedido.photo : 'https://i.ibb.co/3hDxD6F/da-a-mao-otario.png'} className="card-img-top h-50 card-personalized-imgA" alt="..."/>
                         <div className="card-body">
                             <h5 className="card-title">{pedido.request}</h5>

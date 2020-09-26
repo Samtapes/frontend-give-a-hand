@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './styles.css';
 
@@ -6,51 +6,73 @@ import { Link } from 'react-router-dom';
 
 
 
+
+
 import Footer from '../Footer';
 
+import api from '../../services/api';
 
 
-export default function Home() {
-
-    // Matéria da notícia
-    const text = " &nbsp &nbsp O novíssimo parque, inaugurado recentemente nesta semana, é sem dúvida um lugar maravilhoso para visitar com a sua família! Possui mais de 25 tipos de árvores, uma lagoa, um playground para as crianças brincarem e diversas flores!<br><br>- 2km quadrados<br>- Lago enorme<br>- Grande variedade de flores<br>- Grande variedade de árvores<br>- Playground para crianças<br><br>E muito mais!<br><br>Esse é o lugar ideal para quem já está cansado da pandemia e quer entrar em contato com a natureza! Mas claro, tomando os devidos cuidados"
-
-    function createMarkup(text) {
-        return {__html: text};
-    }
+export default function Home(props) {
+    const [news, setNews] = useState({});
     
+    const newsId = props.match.params.newsId
     
-    function Materia() {
-    return <div dangerouslySetInnerHTML={createMarkup(text)} />;
-    }
-
-
-
-    React.useEffect(() => {
+    useEffect(() => {
         const body = document.querySelector('#root');
     
         body.scrollIntoView({
             behavior: 'smooth'
         }, 500)
     
-    }, []);
+
+        // Getting the news
+        async function getNews(){
+            const news = await api.get('noticia/' + newsId);
+            console.log(news.data)
+
+            setNews(news.data)
+        }
+
+        getNews();
+    }, [newsId]);
       
+
+
+    function createMarkup(description) {
+        return {__html: description};
+    }      
+
+
+    function RequestDescription(props) {
+        return(
+            <div className="mx-5" style={{fontSize: '2vh', whiteSpace: 'pre-wrap'}} dangerouslySetInnerHTML={createMarkup(props.content)}></div>
+        );
+    }
+
+
+    const [noticias, setNoticias] = useState([]);
+
+    useEffect(() => {
+        api.get('noticias').then(res => {
+            console.log(res.data);
+            setNoticias(res.data)
+        })
+    }, []);
+
 
 
     return(
         <div className="position-relative" style={{marginTop: -45}}>
             <header id="header">
-                <div className="image-container d-flex align-items-center justify-content-center">
-                    <h1 className="text-white text-center" style={{fontSize: '8vh'}}>Novo Parque</h1>
+                <div className="image-container d-flex align-items-center justify-content-center"  style={{backgroundImage: "url(" + news.photo + ")", textShadow: '1px 3px 10px #000000'}}>
+                    <h1 className="text-white text-center" style={{fontSize: '8vh'}}>{news.title}</h1>
                 </div>
             </header>
 
             <main className="mt-5 position-relative">           
 
-                <p className="mx-5" style={{fontSize: '2vh'}}>
-                    <Materia/>
-                </p>
-
+                <RequestDescription content={news.content}/>
 
 
                 <div style={{marginTop: '7%'}} className="line-separator mt-5 mb-5"/>
@@ -62,32 +84,17 @@ export default function Home() {
 
                 <div className="container-news text-center mb-5">
 
-                    <div className="card news-card">
-                        <img className="card-img-top card-personalized-img"  src="https://imagens.ebc.com.br/H-be40PXKynDHnP5DSeQhm1RK4Q=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/17_07_2020_covid_ibirapuera-2.jpg?itok=w3ttZtAZ" alt="Card"/>
-                        <div className="card-body"> 
-                            <h5 className="card-title text-white">Novo Parque</h5>
-                            <p className="card-text text-white">O novíssimo parque, inaugurado recentemente nesta semana, é sem dúvida um lugar maravilhoso para visitar com...</p>
-                            <Link to="/noticia" className="text-white card-news-link"><b>Ver notícia</b></Link>
+                {noticias.map(noticia => (
+                        <div className="card news-card mb-5" key={noticia.id}>
+                            <img className="card-img-top card-personalized-img"  src={noticia.photo} alt="Card"/>
+                            <div className="card-body"> 
+                                <h5  className="card-title text-white">{noticia.title}</h5>
+                                <p className="card-text text-white" style={{height: '96px', overflow: 'hidden'}}>{noticia.content}</p>
+                                <Link to={"/noticia/" + noticia.id} className="text-white card-news-link"><b>Ver notícia</b></Link>
+                            </div>
+                            
                         </div>
-                    </div>
-
-                    <div className="card news-card">
-                        <img className="card-img-top card-personalized-img"  src="https://tutores.com.br/blog/wp-content/uploads/2018/09/arte1-820x455.jpg" alt="Card"/>
-                        <div className="card-body"> 
-                            <h5 className="card-title text-white">Bienal de artes</h5>
-                            <p className="card-text text-white">Prepare-se pois está chegando a bienal de artes na nossa cidade! Com diversos artistas e tipos de artes!</p>
-                            <Link to="/noticia" className="text-white card-news-link"><b>Ver notícia</b></Link>
-                        </div>
-                    </div>
-
-                    <div className="card news-card">
-                        <img className="card-img-top card-personalized-img"  src="https://voceconcursado.com.br/wp-content/uploads/2019/10/PCD.jpg" alt="Card"/>
-                        <div className="card-body"> 
-                            <h5 className="card-title text-white">Reformas na cidade</h5>
-                            <p className="card-text text-white">Diversas reformas estão sendo feitas atendendo pedidos de muitod deficientes para...</p>
-                            <Link to="/noticia" className="text-white card-news-link"><b>Ver notícia</b></Link>
-                        </div>
-                    </div>
+                    ))}
 
                 </div>
 

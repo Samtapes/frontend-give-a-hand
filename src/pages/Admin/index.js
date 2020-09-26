@@ -19,17 +19,17 @@ export default function Admin(){
             <div className="container">
                 <div className="row">
                     <div className="col-md-4 my-2">
-                        <Link to="/editar-pedidos">
+                        <Link to="/admin/editar-pedidos">
                             <button type="submit" className="btn btn-blue p-4 px-5" style={{width: '60%'}}> <FaRegComment size="64" color="#ffffff"/> <br/> Editar pedidos</button>
                         </Link>
                     </div>
                     <div className="col-md-4 my-2">
-                        <Link to="/add-noticia">
+                        <Link to="/admin/add-noticia">
                             <button type="submit" className="btn btn-blue p-4 px-5" style={{width: '60%'}}> <FaRegPlusSquare size="64" color="#ffffff"/> <br/> Criar Notícias</button>
                         </Link>
                     </div>
                     <div className="col-md-4 my-2">
-                        <Link to="/editar-noticia">
+                        <Link to="/admin/editar-noticia">
                             <button type="submit" className="btn btn-blue p-4 px-5" style={{width: '60%'}}> <FaRegNewspaper size="64" color="#ffffff"/>  <br/> Editar notícias</button>
                         </Link>
                     </div>

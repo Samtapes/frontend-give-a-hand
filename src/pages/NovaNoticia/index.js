@@ -93,7 +93,7 @@ export default function NovaNoticia(){
                     <h1 className="text-blue my-5 text-center">Nova Notícia</h1>
 
                     <form className="form-group" onSubmit={handleCreateNewNews}>
-                        <input type="text" className="form-control mb-1" id="inputTitulo" aria-describedby="tituloHelp" placeholder="Título" ref={title}/>
+                        <input type="text" className="form-control mb-1" id="inputTitulo" aria-describedby="tituloHelp" placeholder="Título (máximo 25 caracteres)" ref={title} maxLength="25"/>
                         <textarea className="form-control my-3" id="inputConteudo" rows="3" placeholder="Conteúdo" style={{minHeight: 100}} ref={content}></textarea>
 
                         <div className="d-flex justify-content-left ">

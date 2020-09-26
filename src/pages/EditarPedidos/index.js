@@ -1,16 +1,49 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import './styles.css';
 
 import { Link } from 'react-router-dom';
 
-import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown, FaTrash, FaCheck  } from 'react-icons/fa';
+import { FaRegTrashAlt, FaCheck  } from 'react-icons/fa';
 
+
+
+import api from '../../services/api';
 
 import Footer from '../Footer';
 
 
 export default function Pedidos() {
+    const [pedidos, setPedidos] = useState([]);
+
+    const user_id = localStorage.getItem('user_id');
+
+    useEffect(() => {
+        api.get('pedidos', {
+            headers: {
+                Authorization: user_id,
+            }
+        }).then(res => {
+            setPedidos(res.data);
+        })
+    }, [user_id]);
+
+
+    async function handleDelete(id){
+        try{
+            await api.delete('pedidos/' + id, {
+                headers: {
+                    Authorization: user_id,
+                }
+            })
+
+            setPedidos(pedidos.filter(pedido => pedido.id !== id));
+        } 
+        
+        catch(err){
+            alert("Erro... Tente novamente!");
+        }
+    }
 
     return(
         <div className="position-relative" style={{marginTop: -45}}>
@@ -24,88 +57,28 @@ export default function Pedidos() {
 
                 <div class="d-flex justify-content-center mb-5">
                     <h2 class="mr-5">214 Casos Resolvidos</h2>
-                    <h2>4 Casos Excluídos</h2>
                 </div>
 
                 <div className="d-flex justify-content-around flex-wrap">
 
-                    <div className="card pedido-card mb-5" style={{width: '400px'}}>
-                        <img src="https://live.staticflickr.com/3393/3182574799_162a2fd13c_b.jpg" className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <h5 className="card-title">Tirem essa elevação na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
-                            <p className="card-text">Por Carla Almeida</p>
+                    {/* Começo Card */}
+                    {pedidos.map(pedido => (
+                        <div className="card pedido-card mb-5" style={{width: '400px'}} key={pedido.id}>
+                            <FaCheck className="check-btn" size="35" color="lightgreen"/>
+                            <FaRegTrashAlt size="36" color="red" style={{position: 'absolute', cursor: 'pointer', right: '0'}} onClick={() => handleDelete(pedido.id)}/>
+                            <img src={pedido.photo !== null ? pedido.photo : 'https://i.ibb.co/3hDxD6F/da-a-mao-otario.png'} className="card-img-top h-50 card-personalized-imgA" alt="..."/>
+                            <div className="card-body">
+                                <h5 className="card-title">{pedido.request}</h5>
+                                <p className="card-text">{pedido.name}</p>
 
-                            <div>
-                                <h5 className="">
-                                    <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
-                                    2.745
-                                    <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
-                                    <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
-                                </h5>
-
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn-pedido my-2"><FaCheck size="35" color="#000"/></button>
-                                    <button class="btn-pedido"><FaTrash size="35" color="#000"/></button>
+                                <div>
+                                    <h5>
+                                        <Link to={{ pathname: '/pedido/' + pedido.id}} className="lerMais-link float-right pr-4">Ler mais</Link>
+                                    </h5>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
-
-                
-
-                    {/* COMECO */}
-                    <div className="card pedido-card mb-5" style={{width: '400px'}}>
-                        <img src="https://live.staticflickr.com/3393/3182574799_162a2fd13c_b.jpg" className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <h5 className="card-title">Tirem essa elevação na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
-                            <p className="card-text">Por Carla Almeida</p>
-
-                            <div>
-                                <h5 className="">
-                                    <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
-                                    2.745
-                                    <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
-                                    <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
-                                </h5>
-
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn-pedido my-2"><FaCheck size="35" color="#000"/></button>
-                                    <button class="btn-pedido"><FaTrash size="35" color="#000"/></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    {/* FIM */}
-
-                    
-
-                    {/* COMECO */}
-                    <div className="card pedido-card mb-5" style={{width: '400px'}}>
-                        <img src="https://live.staticflickr.com/3393/3182574799_162a2fd13c_b.jpg" className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <h5 className="card-title">Tirem essa elevação na calçada, me atrapalha todo dia no caminho do trabalho!</h5>
-                            <p className="card-text">Por Carla Almeida</p>
-
-                            <div>
-                                <h5 className="mb-3">
-                                    <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
-                                    2.745
-                                    <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
-                                    <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
-                                </h5>
-
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn-pedido my-2"><FaCheck size="35" color="#000"/></button>
-                                    <button class="btn-pedido"><FaTrash size="35" color="#000"/></button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    {/* FIM */}
-
+                    ))}
 
                 </div>
 
