@@ -23,8 +23,8 @@ export default function Pedidos() {
 
             <main className="my-5 position-relative mt-5">
 
-                <div class="d-flex justify-content-center mb-5">
-                    <h2 class="">Você tem 1 Pedido</h2>
+                <div className="d-flex justify-content-center mb-5">
+                    <h2>Você tem 1 Pedido</h2>
                 </div>
 
                 <div className="text-center mb-5">
@@ -41,14 +41,14 @@ export default function Pedidos() {
 
                             <div>
                                 <h5 className="">
-                                    <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
+                                    <button className="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
-                                    <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
+                                    <button className="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
                                     <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
 
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn-pedido"><FaTrash size="35" color="#000"/></button>
+                                <div className="d-flex justify-content-center">
+                                    <button className="btn-pedido"><FaTrash size="35" color="#000"/></button>
                                 </div>
                             </div>
 
@@ -66,14 +66,14 @@ export default function Pedidos() {
 
                             <div>
                                 <h5 className="">
-                                    <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
+                                    <button className="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
-                                    <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
+                                    <button className="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
                                     <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
 
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn-pedido"><FaTrash size="35" color="#000"/></button>
+                                <div className="d-flex justify-content-center">
+                                    <button className="btn-pedido"><FaTrash size="35" color="#000"/></button>
                                 </div>
                             </div>
 
@@ -92,14 +92,14 @@ export default function Pedidos() {
 
                             <div>
                                 <h5 className="mb-3">
-                                    <button class="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
+                                    <button className="btn-pedido"><FaRegArrowAltCircleUp size="35" color="#000"/></button>
                                     2.745
-                                    <button class="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
+                                    <button className="btn-pedido"><FaRegArrowAltCircleDown size="35" color="#000"/></button>
                                     <Link to="#" className="lerMais-link float-right pr-4">Ler mais</Link>
                                 </h5>
 
-                                <div class="d-flex justify-content-center">
-                                    <button class="btn-pedido"><FaTrash size="35" color="#000"/></button>
+                                <div className="d-flex justify-content-center">
+                                    <button className="btn-pedido"><FaTrash size="35" color="#000"/></button>
                                 </div>
                             </div>
 

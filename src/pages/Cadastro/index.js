@@ -33,7 +33,7 @@ export default function Cadastro(){
         }
 
         try{
-            const res = await api.post('cadastro', data);
+            await api.post('cadastro', data);
 
             history.push('/login');
         }
