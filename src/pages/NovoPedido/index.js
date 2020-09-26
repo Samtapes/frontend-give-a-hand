@@ -121,7 +121,7 @@ export default function NovoPedido(){
                     <h1 className="text-blue my-5 text-center">Novo Pedido</h1>
 
                     <form className="form-group" onSubmit={handleCreateRequest}>
-                        <input type="text" className="form-control" id="inputPedido" aria-describedby="pedidoHelp" placeholder="Pedido" ref={request}/>
+                        <input type="text" className="form-control" id="inputPedido" aria-describedby="pedidoHelp" placeholder="Pedido (máximo de 100 caracteres)" maxLength="100" ref={request}/>
                         <textarea className="form-control my-4" id="inputDescricao" rows="3" placeholder="Descrição" style={{minHeight: 100}} ref={description}></textarea>
                         <input type="text" className="form-control mb-3" id="inputEndereco" aria-describedby="enderecoHelp" placeholder="Endereço do Local (opcional)" ref={adress}/>
                         <div className="d-flex justify-content-left ">

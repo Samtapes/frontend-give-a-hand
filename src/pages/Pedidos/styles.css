@@ -9,13 +9,22 @@
 
 .pedido-card {
     background-color: #EEEEEE;
+    height: 400px;
 }
 
 .lerMais-link {
     text-decoration: none;
     color: #000;
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
 }
 
 .lerMais-link:hover {
     color: #000;
+}
+
+.card-personalized-imgA {
+    height: 50%;
+    object-fit: cover;
 }
