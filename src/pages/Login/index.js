@@ -34,15 +34,18 @@ export default function Login(){
 
             if(res.data.permission === "permited"){
                 localStorage.setItem('user_id', res.data.id);
+                localStorage.setItem('admin', res.data.admin);
+                console.log(res.data.admin);
 
                 history.push('/');
+                window.location.reload(false);
             }
         }
         catch(err){
             alert("Nome ou senha incorretos!")
         }
     }
-
+    
     return(
         <div> 
             <div className="mx-30p text-center mt-5">

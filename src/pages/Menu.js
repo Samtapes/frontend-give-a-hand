@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom'
 
@@ -7,6 +7,25 @@ import '../index.css'
 import logo from '../assets/LOGO.svg'
 
 export default function Menu(){
+    const [isLogged, setIsLogged] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        const admin = localStorage.getItem('admin');
+
+        admin === '1' ? setIsAdmin(true) : setIsAdmin(false)
+
+        console.log(isAdmin);
+
+
+        const login = localStorage.getItem('user_id');
+
+        !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
+
+        console.log(isLogged)
+
+    }, [isAdmin, isLogged]);
+
     window.onscroll = function (e) {
         const scrollPos = document.body.getBoundingClientRect().top;
         
@@ -17,6 +36,14 @@ export default function Menu(){
         else{
             document.getElementsByClassName('navbar')[0].style.backgroundColor = "#005d93";
         }
+    }
+
+
+
+    function handleLogout(){
+        window.location.reload(false);
+
+        localStorage.clear();
     }
 
 
@@ -40,9 +67,24 @@ export default function Menu(){
                         <li className="nav-item p-2">
                             <Link className="nav-link text-white" to="/pedidos">Pedidos</Link>
                         </li>
-                        <li className="nav-item active ml-auto p-2">
-                            <Link className="nav-link text-white" to="/login">Login <span className="sr-only">(current)</span></Link>
+                        <li className="nav-item ml-auto p-2">
+                            {isLogged
+                            ?
+                                <button className="nav-link text-white bg-transparent border-0" onClick={handleLogout}>Sair <span className="sr-only">(current)</span></button>
+
+                            :
+                                <Link className="nav-link text-white" to="/login">Login <span className="sr-only">(current)</span></Link>
+                            }
                         </li>
+
+                        {isAdmin
+                        ?
+                            <li className="nav-item p-2">
+                                <Link className="nav-link text-white" to="/admin">Admin <span className="sr-only">(current)</span></Link>
+                            </li>
+                        :
+                            <></>
+                        }
                     </ul>
                 </div>
             </nav>
