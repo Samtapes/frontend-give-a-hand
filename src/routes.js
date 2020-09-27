@@ -29,15 +29,15 @@ export default function Routes() {
                     <Route path="/login" exact component={Login} />
                     <Route path="/cadastro" exact component={Cadastro} />
                     <Route path="/admin" exact component={Admin} />
-                    <Route path="/admin/add-noticia" exact component={NovaNoticia} />
-                    <Route path="/admin/editar-pedidos" exact component={EditarPedidos} />
+                    <Route path="/admin/noticias/nova" exact component={NovaNoticia} />
+                    <Route path="/admin/pedidos" exact component={EditarPedidos} />
                     <Route path="/sobre" exact component={Sobre} />
                     <Route path="/pedidos" exact component={Pedidos} />
                     <Route path="/pedido/:requestId" exact component={Pedido} />
-                    <Route path="/add-pedido" exact component={NovoPedido} />
-                    <Route path="/seus-pedidos" exact component={SeusPedidos} />
+                    <Route path="/perfil/novo-pedido" exact component={NovoPedido} />
+                    <Route path="/perfil" exact component={SeusPedidos} />
                     <Route path="/noticia/:newsId" exact component={Noticia} />
-                    <Route path="/admin/editar-noticia" exact component={EditarNoticia} />
+                    <Route path="/admin/noticias" exact component={EditarNoticia} />
                 </Switch>
             </div>
         </BrowserRouter>

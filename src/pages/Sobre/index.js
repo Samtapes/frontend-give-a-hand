@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import './styles.css';
 
@@ -7,8 +7,22 @@ import './styles.css';
 import Footer from '../Footer';
 
 
+import api from '../../services/api';
+
 
 export default function Sobre() {
+
+    const [pedidosResolvidos, setPedidosResolvidos] = useState(0);
+
+    useEffect(() => {
+        async  function getSolvedRequests(){
+            const resolvidosRes = await api.get('casos_resolvidos');
+            setPedidosResolvidos(resolvidosRes.data.quantity);
+        }
+
+        getSolvedRequests();
+    }, [])
+
 
     return(
         <div className="position-relative" style={{marginTop: -40}}>
@@ -28,7 +42,7 @@ export default function Sobre() {
                 <div className="line-separator mt-5 mb-5"/>
 
 
-                <h2 className="text-center mb-5 text-casos">214 casos resolvidos</h2>
+                <h2 className="text-center mb-5 text-casos">{pedidosResolvidos} {pedidosResolvidos === 1 ? "caso" : "casos"} {pedidosResolvidos === 1 ? "Resolvido" : "Resolvidos"}</h2>
 
 
                 <div className="line-separator mt-5 mb-5"/>

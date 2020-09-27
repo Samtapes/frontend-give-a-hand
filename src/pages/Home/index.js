@@ -62,7 +62,7 @@ export default function Home() {
 
                 <h2 className="text-center mb-5">Tem alguma ideia para melhor a cidade?</h2>
 
-                <Link to="/add-pedido">
+                <Link to="/perfil">
                 <div className="card-personalized">
                     <HandIcon width="40%" height="40%"/>
                     <p className="card-personalized-text" style={{fontSize: '2.2vh'}}><b>Clique aqui para fazer um pedido</b></p>

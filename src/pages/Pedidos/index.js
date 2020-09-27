@@ -31,7 +31,7 @@ export default function Pedidos() {
 
 
     return(
-        <div className="position-relative" style={{marginTop: -45}}>
+        <div style={{marginTop: -45}}>
             <header>
                 <div className="image-container-pedidos d-flex align-items-center justify-content-center">
                     <h1 className="text-white" style={{fontSize: '8vh', textShadow: '1px 3px 10px #000000'}}>Pedidos</h1>
@@ -41,8 +41,8 @@ export default function Pedidos() {
             <main className="my-5 position-relative mt-5">
 
                 <div className="text-center mb-5">
-                    <Link to="/add-pedido" className="btn btn-blue px-4 py-3">Criar Pedido</Link>
-                    <Link to="/seus-pedidos" className="btn btn-blue px-4 py-3 ml-3">Seus Pedidos</Link>
+                    <Link to="/perfil/novo-pedido" className="btn btn-blue px-4 py-3">Criar Pedido</Link>
+                    <Link to="/perfil" className="btn btn-blue px-4 py-3 ml-3">Seus Pedidos</Link>
                 </div>
 
                 <div className="d-flex justify-content-around flex-wrap">
@@ -71,7 +71,13 @@ export default function Pedidos() {
 
             </main>
         
-            <Footer style={{marginTop: '5%'}}/>
+
+            {pedidos.length === 0
+            ?
+                <Footer style={{position: 'absolute'}}/>
+            :
+                <Footer style={{marginTop: '5%'}}/>
+            }
         </div>
     );
 }

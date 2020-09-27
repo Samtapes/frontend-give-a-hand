@@ -46,6 +46,8 @@ export default function Pedidos() {
             })
 
             setPedidos(pedidos.filter(pedido => pedido.id !== id));
+
+            setQntdPedidos(qntdPedidos - 1);
         } 
         
         catch(err){
@@ -65,11 +67,11 @@ export default function Pedidos() {
             <main className="my-5 position-relative mt-5">
 
                 <div className="d-flex justify-content-center mb-5">
-                    <h2>Você tem {qntdPedidos} Pedido</h2>
+                    <h2>Você tem {qntdPedidos} {qntdPedidos === 1 ? "Pedido" : "Pedidos"}</h2>
                 </div>
 
                 <div className="text-center mb-5">
-                    <Link to="/add-pedido" className="btn btn-blue px-4 py-3">Criar Pedido</Link>
+                    <Link to="/perfil/novo-pedido" className="btn btn-blue px-4 py-3">Criar Pedido</Link>
                 </div>
 
                 <div className="d-flex justify-content-around flex-wrap">

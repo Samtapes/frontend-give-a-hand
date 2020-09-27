@@ -17,6 +17,9 @@ export default function NovaNoticia(){
     const content = React.useRef();
     const photo = React.useRef();
 
+    const [createError, setCreateError] = useState(false);
+
+
     const history = useHistory();
 
     async function handleCreateNewNews(e){
@@ -62,11 +65,13 @@ export default function NovaNoticia(){
 
                         setWaitServerRes(false);
 
-                        history.push('/admin')
+                        history.push('/admin/noticias');
                     })
                     .catch(function (response) {
                         //handle error
                         console.log(response);
+
+                        setCreateError(true);
                     })
             };
         
@@ -84,7 +89,17 @@ export default function NovaNoticia(){
             <div className="mx-30p my-5 text-center">
                 {waitServerRes === true
                 ?
-                    <h1 className="text-blue my-5 text-center">Aguarde Enquanto Criamos a Notícia...</h1>
+                    <>
+                        <h1 className="text-blue my-5 text-center">{createError ? "Erro com essa imagem... Recarregue a página e tente novamente!" : "Aguarde Enquanto Criamos a Notícia..."}</h1>
+
+
+                        {createError
+                        ?
+                            <p className="text-center">Se o erro persistir escolha outra imagem!</p>
+                        :
+                            <></>
+                        }
+                    </>
                 :
                     <></>
                 }
@@ -94,7 +109,7 @@ export default function NovaNoticia(){
 
                     <form className="form-group" onSubmit={handleCreateNewNews}>
                         <input type="text" className="form-control mb-1" id="inputTitulo" aria-describedby="tituloHelp" placeholder="Título (máximo 25 caracteres)" ref={title} maxLength="25"/>
-                        <textarea className="form-control my-3" id="inputConteudo" rows="3" placeholder="Conteúdo" style={{minHeight: 100}} ref={content}></textarea>
+                        <textarea className="form-control my-3" id="inputConteudo" rows="3" placeholder="Conteúdo" style={{minHeight: 100, maxHeight: 270}} ref={content}></textarea>
 
                         <div className="d-flex justify-content-left ">
                             <label htmlFor="inputFoto">Foto:</label>

@@ -40,7 +40,7 @@ export default function Home() {
 
 
     return(
-        <div className="position-relative" style={{marginTop: -45}}>
+        <div style={{marginTop: -45}}>
             <header>
                 <div className="image-container d-flex align-items-center justify-content-center">
                     <h1 className="text-white" style={{fontSize: '8vh'}}>Editar Notícias</h1>
@@ -51,7 +51,7 @@ export default function Home() {
             <main className="mt-5 position-relative">
 
                 <div className="text-center my-5">
-                    <Link to="/add-noticia" className="btn btn-blue px-4 py-3">Criar Notícia</Link>
+                    <Link to="/admin/noticias/nova" className="btn btn-blue px-4 py-3">Criar Notícia</Link>
                 </div>
 
                 <div className="container-news text-center mb-5">
@@ -74,7 +74,12 @@ export default function Home() {
 
             </main>
             
-            <Footer/>
+            {noticias.length === 0
+            ?
+                <Footer style={{position: 'absolute'}}/>
+            :
+                <Footer/>
+            }
         </div>
     );
 }

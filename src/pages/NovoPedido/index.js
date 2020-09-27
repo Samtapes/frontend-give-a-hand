@@ -16,6 +16,8 @@ export default function NovoPedido(){
     const adress = React.useRef();
     const photo = React.useRef();
 
+    const [createError, setCreateError] = useState(false);
+
 
     const history = useHistory();
 
@@ -64,11 +66,13 @@ export default function NovoPedido(){
 
                         setWaitServerRes(false);
 
-                        history.push('/seus-pedidos')
+                        history.push('/perfil')
                     })
                     .catch(function (response) {
                         //handle error
                         console.log(response);
+
+                        setCreateError(true);
                     })
             };
         
@@ -85,7 +89,7 @@ export default function NovoPedido(){
 
             await api.post('pedidos', data, {headers: {Authorization: localStorage.getItem('user_id')}});
 
-            history.push('/seus-pedidos')
+            history.push('/perfil');
         }
 
         else if(request.current.value !== "" && description.current.value !== "" && adress.current.value === ""  && photo.current.files[0] === undefined){
@@ -98,7 +102,7 @@ export default function NovoPedido(){
 
             await api.post('pedidos', data, {headers: {Authorization: localStorage.getItem('user_id')}});
 
-            history.push('/seus-pedidos')
+            history.push('/perfil');
         }
 
         else{
@@ -111,7 +115,17 @@ export default function NovoPedido(){
             <div className="mx-30p text-center">
                 {waitServerRes === true
                 ?
-                    <h1 className="text-blue my-5 text-center">Aguarde Enquanto Criamos seu Pedido...</h1>
+                    <>
+                        <h1 className="text-blue my-5 text-center">{createError ? "Erro com essa imagem... Recarregue a página e tente novamente!" : "Aguarde Enquanto Criamos seu Pedido..."}</h1>
+
+                        {createError
+                        ?
+                            <p className="text-center">Se o erro persistir escolha outra imagem!</p>
+                        :
+                            <></>
+                        }
+                    </>
+
                 :
                     <></>
                 }
@@ -122,7 +136,7 @@ export default function NovoPedido(){
 
                     <form className="form-group" onSubmit={handleCreateRequest}>
                         <input type="text" className="form-control" id="inputPedido" aria-describedby="pedidoHelp" placeholder="Pedido (máximo de 100 caracteres)" maxLength="100" ref={request}/>
-                        <textarea className="form-control my-4" id="inputDescricao" rows="3" placeholder="Descrição" style={{minHeight: 100}} ref={description}></textarea>
+                        <textarea className="form-control my-4" id="inputDescricao" rows="3" placeholder="Descrição" style={{minHeight: 100, maxHeight: 270}} ref={description}></textarea>
                         <input type="text" className="form-control mb-3" id="inputEndereco" aria-describedby="enderecoHelp" placeholder="Endereço do Local (opcional)" ref={adress}/>
                         <div className="d-flex justify-content-left ">
                             <label htmlFor="inputFoto">Foto:</label>
