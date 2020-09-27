@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import './styles.css';
 
@@ -16,15 +16,58 @@ import api from '../../services/api';
 
 
 
+
+
 export default function Home() {
     const [noticias, setNoticias] = useState([]);
+
+    const [temperatura, setTemperatura] = useState(0.00);
+
+    const zona = useRef()
 
     useEffect(() => {
         api.get('noticias').then(res => {
             console.log(res.data);
             setNoticias(res.data)
         })
+
+        api.get('https://api.openweathermap.org/data/2.5/weather?q=São Paulo&appid=4d8fb5b93d4af21d66a2948710284366&units=metric')
+        .then(res => {
+            setTemperatura(res.data.main.temp)
+            console.log(res.data.main.temp);
+        });
     }, []);
+
+    
+    
+    const name = localStorage.getItem('user_name');
+
+
+    const [isLogged, setIsLogged] = useState(true);
+
+    useEffect(() => {
+        const login = localStorage.getItem('user_id');
+
+        !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
+
+        console.log(isLogged)
+
+    }, [isLogged]);
+
+
+
+
+    function handleGetTemp(){
+        const zonaVal = zona.current.value;
+
+        console.log(zonaVal)
+
+        api.get('https://api.openweathermap.org/data/2.5/weather?q=' + zonaVal + '&appid=4d8fb5b93d4af21d66a2948710284366&units=metric')
+        .then(res => {
+            setTemperatura(res.data.main.temp)
+            console.log(res.data.main.temp);
+        });
+    }
 
 
 
@@ -35,15 +78,15 @@ export default function Home() {
                     <h1 className="text-white" style={{fontSize: '8vh'}}>Give-a-hand</h1>
 
                     <div className="temp-card text-center">
-                        <select id="form-control">
-                            <option value="zona-norte">Zona Norte</option>
-                            <option value="zona-norte">Zona Sul</option>
-                            <option value="zona-norte">Zona Lest</option>
-                            <option value="zona-norte">Zona Oeste</option>
-                            <option value="zona-norte">Zona Central</option>
+                        <select id="form-control" ref={zona} onChange={handleGetTemp}>
+                            <option value="São Paulo">Zona Norte</option>
+                            <option value="Santa Catarina">Zona Sul</option>
+                            <option value="Belo Horizonte">Zona Leste</option>
+                            <option value="Rio de Janeiro">Zona Oeste</option>
+                            <option value="Brasília">Zona Central</option>
                         </select>
 
-                        <p className="text-white mb-0 mt-3" style={{fontSize: '7vh'}}>32°C</p>
+                        <p className="text-white mb-0 mt-3" style={{fontSize: '7vh'}}>{temperatura}°C</p>
 
                         <SunIcon width="81" height="81"/>
                     </div>
@@ -53,7 +96,12 @@ export default function Home() {
             <main className="mt-5 position-relative">
 
                 <div className="text-container">
-                    <p style={{fontSize: '2.2vh'}}>Bem-vindo ao Give-a-hand</p>
+                    { isLogged
+                    ?
+                        <p style={{fontSize: '2.2vh'}}>Bem-vindo(a) {name}, ao Give-a-hand</p>
+                    :
+                        <p style={{fontSize: '2.2vh'}}>Bem-vindo(a) ao Give-a-hand</p>
+                    }
                     <p className="mb-5" style={{fontSize: '2.2vh'}}>Um site do governo municipal para ajudar a cidade e com grande foco na acessibilidades à aqueles com alguma deficiência!</p>
                     <Link to="/sobre" className="text-white" style={{fontSize: '2.2vh'}}><b>Ler mais</b></Link>
                 </div>

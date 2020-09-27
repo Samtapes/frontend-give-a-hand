@@ -104,7 +104,7 @@ export default function Pedidos() {
         <div style={{marginTop: -45}}>
             <header>
                 <div className="image-container-pedidos d-flex align-items-center justify-content-center">
-                    <h1 className="text-white" style={{fontSize: '8vh', textShadow: '1px 3px 10px #000000'}}>Editar Pedidos</h1>
+                    <h1 className="text-white text-center" style={{fontSize: '8vh', textShadow: '1px 3px 10px #000000'}}>Editar Pedidos</h1>
                 </div>
             </header>
 

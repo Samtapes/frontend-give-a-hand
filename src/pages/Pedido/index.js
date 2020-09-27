@@ -39,6 +39,9 @@ export default function Pedido(props){
         );
     }
 
+
+    const [copiado, setCopiado] = useState(false);
+
     return(
         <div>
             <main>
@@ -54,7 +57,7 @@ export default function Pedido(props){
                         <RequestDescription description={request.description}/>
                         
                         <div className="justify-content-center align-center text-center my-5">
-                            <button className="btn btn-blue px-4 py-3">Compartilhar</button>
+                            <button className="btn btn-blue px-4 py-3" style={{backgroundColor: copiado ? 'green' : ''}} onClick={() => {navigator.clipboard.writeText(window.location.href); setCopiado(true)}}>Compartilhar</button>
                         </div>
                     </div>
                 </div>

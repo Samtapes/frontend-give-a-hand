@@ -71,7 +71,7 @@ export default function Home() {
         <div style={{marginTop: -45}}>
             <header>
                 <div className="image-container d-flex align-items-center justify-content-center">
-                    <h1 className="text-white" style={{fontSize: '8vh'}}>Editar Notícias</h1>
+                    <h1 className="text-white text-center" style={{fontSize: '8vh'}}>Editar Notícias</h1>
                 </div>
             </header>
 

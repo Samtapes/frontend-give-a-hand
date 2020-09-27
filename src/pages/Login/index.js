@@ -35,6 +35,8 @@ export default function Login(){
             if(res.data.permission === "permited"){
                 localStorage.setItem('user_id', res.data.id);
                 localStorage.setItem('admin', res.data.admin);
+                localStorage.setItem('user_name', res.data.name);
+
                 console.log(res.data.admin);
 
                 history.push('/');
