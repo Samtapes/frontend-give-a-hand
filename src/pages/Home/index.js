@@ -26,6 +26,8 @@ export default function Home() {
         })
     }, []);
 
+
+
     return(
         <div className="position-relative" style={{marginTop: -45}}>
             <header>
@@ -70,27 +72,35 @@ export default function Home() {
                 </Link>
             
 
-                <div className="line-separator mt-5 mb-5"/>
+
+                {noticias.length > 0
+                ?
+                    <>
+                    <div className="line-separator mt-5 mb-5"/>
 
 
 
-                <h2 className="text-center mb-5">Principais notícias</h2>
+                    <h2 className="text-center mb-5">Principais notícias</h2>
 
-                <div className="container-news text-center mb-5">
+                    <div className="container-news text-center mb-5">
 
-                    {noticias.map(noticia => (
-                        <div className="card news-card mb-5" key={noticia.id}>
-                            <img className="card-img-top card-personalized-img"  src={noticia.photo} alt="Card"/>
-                            <div className="card-body"> 
-                                <h5  className="card-title text-white">{noticia.title}</h5>
-                                <p className="card-text text-white" style={{height: '96px', overflow: 'hidden'}}>{noticia.content}</p>
-                                <Link to={"/noticia/" + noticia.id} className="text-white card-news-link"><b>Ver notícia</b></Link>
+                        {noticias.map(noticia => (
+                            <div className="card news-card mb-5" key={noticia.id}>
+                                <img className="card-img-top card-personalized-img"  src={noticia.photo} alt="Card"/>
+                                <div className="card-body"> 
+                                    <h5  className="card-title text-white">{noticia.title}</h5>
+                                    <p className="card-text text-white" style={{height: '96px', overflow: 'hidden'}}>{noticia.content}</p>
+                                    <Link to={"/noticia/" + noticia.id} className="text-white card-news-link"><b>Ver notícia</b></Link>
+                                </div>
+                                
                             </div>
-                            
-                        </div>
-                    ))}
+                        ))}
 
-                </div>
+                    </div>
+                    </>
+                :
+                    <></>
+                }
 
             </main>
 

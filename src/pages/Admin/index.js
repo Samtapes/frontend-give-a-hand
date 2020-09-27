@@ -1,17 +1,45 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import { FaRegNewspaper, FaRegComment, FaRegPlusSquare } from 'react-icons/fa';
 
 
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 
 import Footer from '../Footer';
 
-// Sempre tem q começar com maiuscula, pq é um componente
 
 
 export default function Admin(){
+    const history = useHistory();
+
+    const [isLogged, setIsLogged] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(true);
+
+    useEffect(() => {
+        const admin = localStorage.getItem('admin');
+
+        admin === '1' ? setIsAdmin(true) : setIsAdmin(false)
+
+        console.log(isAdmin);
+
+
+        const login = localStorage.getItem('user_id');
+
+        !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
+
+        console.log(isLogged)
+
+    }, [isAdmin, isLogged]);
+
+
+    if(!isAdmin){
+        history.push('/');
+    }
+
+
+
+
     return(
         <div style={{textAlign:'center'}}>
             <h1 className="text-blue my-5 text-center">Administração</h1>

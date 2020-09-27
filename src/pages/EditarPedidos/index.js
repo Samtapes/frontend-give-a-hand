@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import './styles.css';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { FaRegTrashAlt, FaCheck  } from 'react-icons/fa';
 
@@ -70,6 +70,36 @@ export default function Pedidos() {
         }
     }
 
+
+
+
+    const history = useHistory();
+
+    const [isLogged, setIsLogged] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(true);
+
+    useEffect(() => {
+        const admin = localStorage.getItem('admin');
+
+        admin === '1' ? setIsAdmin(true) : setIsAdmin(false)
+
+        console.log(isAdmin);
+
+
+        const login = localStorage.getItem('user_id');
+
+        !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
+
+        console.log(isLogged)
+
+    }, [isAdmin, isLogged]);
+
+
+    if(!isAdmin){
+        history.push('/');
+    }
+
+
     return(
         <div style={{marginTop: -45}}>
             <header>
@@ -80,8 +110,8 @@ export default function Pedidos() {
 
             <main className="my-5 position-relative mt-5">
 
-                <div class="d-flex justify-content-center mb-5">
-                    <h2 class="mr-5">{pedidosResolvidos} {pedidosResolvidos === 1 ? "Caso" : "Casos"} {pedidosResolvidos === 1 ? "Resolvido" : "Resolvidos"}</h2>
+                <div className="d-flex justify-content-center mb-5">
+                    <h2 className="mr-5">{pedidosResolvidos} {pedidosResolvidos === 1 ? "Caso" : "Casos"} {pedidosResolvidos === 1 ? "Resolvido" : "Resolvidos"}</h2>
                 </div>
 
                 <div className="d-flex justify-content-around flex-wrap">

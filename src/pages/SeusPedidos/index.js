@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import './styles.css';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 import { FaRegTrashAlt } from 'react-icons/fa';
@@ -22,6 +22,9 @@ export default function Pedidos() {
     const user_id = localStorage.getItem('user_id');
 
     const [qntdPedidos, setQntdPedidos] = useState(0);
+
+
+    const history = useHistory();
 
 
     useEffect(() => {
@@ -56,8 +59,44 @@ export default function Pedidos() {
     }
 
 
+
+
+    const [isLogged, setIsLogged] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        const admin = localStorage.getItem('admin');
+
+        admin === '1' ? setIsAdmin(true) : setIsAdmin(false)
+
+        console.log(isAdmin);
+
+
+        const login = localStorage.getItem('user_id');
+
+        !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
+
+        console.log(isLogged);
+
+        
+    }, [isAdmin, isLogged]);
+    
+    
+    if(!isLogged){
+        history.push('/');
+    }
+
     return(
-        <div className="position-relative" style={{marginTop: -45}}>
+        <>
+        {isLogged
+        ?
+            <></>
+        :
+            <h1 className="text-blue my-5 text-center">Faça login para acessar essa página!</h1>
+        }
+
+
+        <div className="position-relative" style={{marginTop: -45, display: isLogged ? 'block' : 'none'}}>
             <header>
                 <div className="image-container-pedidos d-flex align-items-center justify-content-center">
                     <h1 className="text-white" style={{fontSize: '8vh', textShadow: '1px 3px 10px #000000'}}>Seus Pedidos</h1>
@@ -100,5 +139,6 @@ export default function Pedidos() {
         
             <Footer/>
         </div>
+        </>
     );
 }

@@ -25,7 +25,7 @@ export default function Sobre() {
 
 
     return(
-        <div className="position-relative" style={{marginTop: -40}}>
+        <div className="position-relative" style={{marginTop: -45}}>
             <header>
                 <div className="image-container-sobre d-flex align-items-center justify-content-center">
                     <h1 className="text-white" style={{fontSize: '8vh'}}>Sobre</h1>
@@ -42,7 +42,7 @@ export default function Sobre() {
                 <div className="line-separator mt-5 mb-5"/>
 
 
-                <h2 className="text-center mb-5 text-casos">{pedidosResolvidos} {pedidosResolvidos === 1 ? "caso" : "casos"} {pedidosResolvidos === 1 ? "Resolvido" : "Resolvidos"}</h2>
+                <h2 className="text-center mb-5 text-casos">{pedidosResolvidos} {pedidosResolvidos === 1 ? "Caso" : "Casos"} {pedidosResolvidos === 1 ? "Resolvido" : "Resolvidos"}</h2>
 
 
                 <div className="line-separator mt-5 mb-5"/>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useHistory } from 'react-router-dom'
 
@@ -82,6 +82,33 @@ export default function NovaNoticia(){
             alert("Preencha todo o formulário!")
         }
     }
+
+
+
+    const [isLogged, setIsLogged] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(true);
+
+    useEffect(() => {
+        const admin = localStorage.getItem('admin');
+
+        admin === '1' ? setIsAdmin(true) : setIsAdmin(false)
+
+        console.log(isAdmin);
+
+
+        const login = localStorage.getItem('user_id');
+
+        !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
+
+        console.log(isLogged)
+
+    }, [isAdmin, isLogged]);
+
+
+    if(!isAdmin){
+        history.push('/');
+    }
+
     
 
     return(

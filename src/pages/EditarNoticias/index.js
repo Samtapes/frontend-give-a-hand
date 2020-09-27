@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import './styles.css';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { FaRegTrashAlt } from 'react-icons/fa';
 
@@ -36,6 +36,34 @@ export default function Home() {
         catch(err){
             alert(err)
         }
+    }
+
+
+
+    const history = useHistory();
+
+    const [isLogged, setIsLogged] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(true);
+
+    useEffect(() => {
+        const admin = localStorage.getItem('admin');
+
+        admin === '1' ? setIsAdmin(true) : setIsAdmin(false)
+
+        console.log(isAdmin);
+
+
+        const login = localStorage.getItem('user_id');
+
+        !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
+
+        console.log(isLogged)
+
+    }, [isAdmin, isLogged]);
+
+
+    if(!isAdmin){
+        history.push('/');
     }
 
 
