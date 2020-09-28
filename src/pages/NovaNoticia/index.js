@@ -91,7 +91,7 @@ export default function NovaNoticia(){
     useEffect(() => {
         const admin = localStorage.getItem('admin');
 
-        admin === '1' ? setIsAdmin(true) : setIsAdmin(false)
+        setIsAdmin(admin)
 
         console.log(isAdmin);
 

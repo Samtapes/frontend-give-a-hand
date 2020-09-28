@@ -81,11 +81,11 @@ export default function Pedidos() {
     useEffect(() => {
         const admin = localStorage.getItem('admin');
 
-        admin === '1' ? setIsAdmin(true) : setIsAdmin(false)
+        setIsAdmin(admin)
 
         console.log(isAdmin);
 
-
+        
         const login = localStorage.getItem('user_id');
 
         !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
