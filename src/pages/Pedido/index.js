@@ -18,7 +18,6 @@ export default function Pedido(props){
     useEffect(() => {
         async function getRequest(){
             const request = await api.get('pedido/' + requestId);
-            console.log(request.data);
 
             setRequest(request.data);
         }

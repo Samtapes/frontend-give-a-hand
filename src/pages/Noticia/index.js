@@ -55,7 +55,6 @@ export default function Home(props) {
 
     useEffect(() => {
         api.get('noticias').then(res => {
-            console.log(res.data);
             setNoticias(res.data)
         })
     }, []);

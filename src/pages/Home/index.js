@@ -50,8 +50,6 @@ export default function Home() {
 
         !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
 
-        console.log(isLogged)
-
     }, [isLogged]);
 
 

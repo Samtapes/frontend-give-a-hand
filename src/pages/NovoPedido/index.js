@@ -24,10 +24,10 @@ export default function NovoPedido(){
     async function handleCreateRequest(e){
         e.preventDefault();
 
-        console.log(request.current.value);
-        console.log(description.current.value);
-        console.log(adress.current.value);
-        console.log(photo.current.files[0]);
+        // console.log(request.current.value);
+        // console.log(description.current.value);
+        // console.log(adress.current.value);
+        // console.log(photo.current.files[0]);
 
         if(request.current.value !== "" && description.current.value !== "" && adress.current.value !== ""  && photo.current.files[0] !== undefined){
             var reader = new FileReader();
@@ -113,23 +113,13 @@ export default function NovoPedido(){
 
 
     const [isLogged, setIsLogged] = useState(true);
-    const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        const admin = localStorage.getItem('admin');
-
-        admin === '1' ? setIsAdmin(true) : setIsAdmin(false)
-
-        console.log(isAdmin);
-
-
         const login = localStorage.getItem('user_id');
 
         !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
 
-        console.log(isLogged)
-
-    }, [isAdmin, isLogged]);
+    }, [isLogged]);
 
 
     if(!isLogged){

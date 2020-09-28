@@ -62,24 +62,13 @@ export default function Pedidos() {
 
 
     const [isLogged, setIsLogged] = useState(true);
-    const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        const admin = localStorage.getItem('admin');
-
-        admin === '1' ? setIsAdmin(true) : setIsAdmin(false)
-
-        console.log(isAdmin);
-
-
         const login = localStorage.getItem('user_id');
 
         !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
-
-        console.log(isLogged);
-
         
-    }, [isAdmin, isLogged]);
+    }, [isLogged]);
     
     
     if(!isLogged){

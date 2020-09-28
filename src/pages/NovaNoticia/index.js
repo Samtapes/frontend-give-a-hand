@@ -51,9 +51,9 @@ export default function NovaNoticia(){
                     })
                     .then(async function (response) {
                         //handle success
-                        console.log(response);
+                        // console.log(response);
         
-                        console.log(response.data.data.url);
+                        // console.log(response.data.data.url);
 
                         const data = {
                             title: title.current.value,
@@ -69,7 +69,7 @@ export default function NovaNoticia(){
                     })
                     .catch(function (response) {
                         //handle error
-                        console.log(response);
+                        // console.log(response);
 
                         setCreateError(true);
                     })
@@ -93,14 +93,10 @@ export default function NovaNoticia(){
 
         setIsAdmin(admin)
 
-        console.log(isAdmin);
-
 
         const login = localStorage.getItem('user_id');
 
         !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
-
-        console.log(isLogged)
 
     }, [isAdmin, isLogged]);
 

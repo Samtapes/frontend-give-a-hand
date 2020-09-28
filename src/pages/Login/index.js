@@ -37,8 +37,6 @@ export default function Login(){
                 localStorage.setItem('admin', res.data.admin);
                 localStorage.setItem('user_name', res.data.name);
 
-                console.log(res.data.admin);
-
                 history.push('/');
                 window.location.reload(false);
             }

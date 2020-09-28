@@ -15,14 +15,11 @@ export default function Menu(){
 
         setIsAdmin(admin)
 
-        console.log(isAdmin);
-
+        
 
         const login = localStorage.getItem('user_id');
 
         !isNaN(parseInt(login)) ? setIsLogged(true) : setIsLogged(false);
-
-        console.log(isLogged)
 
     }, [isAdmin, isLogged]);
 
