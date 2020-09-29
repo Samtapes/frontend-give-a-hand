@@ -27,14 +27,12 @@ export default function Home() {
 
     useEffect(() => {
         api.get('noticias').then(res => {
-            console.log(res.data);
             setNoticias(res.data)
         })
 
         api.get('https://api.openweathermap.org/data/2.5/weather?q=São Paulo&appid=4d8fb5b93d4af21d66a2948710284366&units=metric')
         .then(res => {
             setTemperatura(res.data.main.temp)
-            console.log(res.data.main.temp);
         });
     }, []);
 
@@ -58,12 +56,9 @@ export default function Home() {
     function handleGetTemp(){
         const zonaVal = zona.current.value;
 
-        console.log(zonaVal)
-
         api.get('https://api.openweathermap.org/data/2.5/weather?q=' + zonaVal + '&appid=4d8fb5b93d4af21d66a2948710284366&units=metric')
         .then(res => {
             setTemperatura(res.data.main.temp)
-            console.log(res.data.main.temp);
         });
     }
 
