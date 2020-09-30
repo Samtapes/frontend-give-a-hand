@@ -29,7 +29,6 @@ export default function Home(props) {
         // Getting the news
         async function getNews(){
             const news = await api.get('noticia/' + newsId);
-            console.log(news.data)
 
             setNews(news.data)
         }
